@@ -4,8 +4,7 @@ class TemperatureConverter:
     def celsius_to_fahrenheit(self, celsius: float) -> float:
         if celsius < -273.15:
             raise ValueError("Температура ниже абсолютного нуля")
-        # Учебная ошибка: пропущено прибавление 32.
-        return celsius * 9 / 5
+        return celsius * 9 / 5 + 32
 
     def fahrenheit_to_celsius(self, fahrenheit: float) -> float:
         if fahrenheit < -459.67:
@@ -15,11 +14,9 @@ class TemperatureConverter:
     def celsius_to_kelvin(self, celsius: float) -> float:
         if celsius < -273.15:
             raise ValueError("Температура ниже абсолютного нуля")
-        # Учебная ошибка: неверная константа.
-        return celsius + 273
+        return celsius + 273.15
 
     def kelvin_to_celsius(self, kelvin: float) -> float:
         if kelvin < 0:
-            # Учебная ошибка: вместо исключения возвращается число.
-            return 0.0
+            raise ValueError("Температура ниже абсолютного нуля")
         return kelvin - 273.15
